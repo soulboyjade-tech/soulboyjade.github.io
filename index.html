@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liang Chujun | 梁楚君 - Visual Arts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0d0d0d; /* 极简黑 */
+            --text-main: #f2f2f2;
+            --text-dim: #666666;
+            --font-serif: 'Noto Serif SC', serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* 导航栏 - 参照 Moz 的极简感 */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            padding: 40px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            letter-spacing: 0.4em;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 200;
+        }
+
+        /* 首页 Hero 区域 - 沉浸式大图 */
+        .hero {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('cover.jpg'); /* 你的主视觉大图 */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-serif);
+            font-size: 5vw;
+            letter-spacing: 0.5em;
+            font-weight: 200;
+            text-transform: uppercase;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            color: var(--text-dim);
+            transform: rotate(90deg);
+        }
+
+        /* 作品列表区域 - 模仿 Moz 的大幅排版 */
+        .work-section {
+            padding: 100px 0;
+        }
+
+        .project-item {
+            width: 100%;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-bottom: 100px;
+            overflow: hidden;
+        }
+
+        .project-img {
+            width: 70%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+            filter: grayscale(20%) brightness(0.8);
+        }
+
+        .project-item:hover .project-img {
+            transform: scale(1.05);
+            filter: grayscale(0%) brightness(1);
+        }
+
+        .project-info {
+            position: absolute;
+            left: 10%;
+            bottom: 10%;
+            z-index: 20;
+        }
+
+        .project-info h2 {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .project-info p {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+        }
+
+        /* 个人陈述区域 */
+        .about {
+            padding: 200px 15%;
+            text-align: left;
+            max-width: 1200px;
+        }
+
+        .about h3 {
+            font-family: var(--font-serif);
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            margin-bottom: 40px;
+            letter-spacing: 0.5em;
+        }
+
+        .about p {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            line-height: 1.8;
+            font-weight: 200;
+        }
+
+        footer {
+            padding: 100px 50px;
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #222;
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            letter-spacing: 0.1em;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 10vw; }
+            .project-img { width: 90%; }
+            .about p { font-size: 1.2rem; }
+            .project-info h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">LIANG CHUJUN</a>
+        <div style="font-size: 0.7rem; letter-spacing: 0.3em; color: var(--text-dim);">FOLIO 2026</div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>落日舞厅</h1>
+            <p style="font-size: 0.8rem; letter-spacing: 0.8em; opacity: 0.5; margin-top: 20px;">SUNSET BALLROOM</p>
+        </div>
+        <div class="scroll-hint">SCROLL</div>
+    </section>
+
+    <div class="work-section">
+        <div class="project-item">
+            <div class="project-img" style="background-image: url('project1.jpg');"></div>
+            <div class="project-info">
+                <p>Documentary / 01</p>
+                <h2>落日舞厅</h2>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-img" style="background-image: url('project2.jpg');"></div>
+            <div class="project-info">
+                <p>Commercial / 02</p>
+                <h2>商业平面摄影</h2>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-img" style="background-image: url('project3.jpg');"></div>
+            <div class="project-info">
+                <p>Personal / 03</p>
+                <h2>再见宜家</h2>
+            </div>
+        </div>
+    </div>
+
+    <section class="about">
+        <h3>ABOUT ME</h3>
+        <p>
+            我是梁楚君，一名影像创作者。<br>
+            毕业于广州美术学院摄影专业。作为 INFJ，我习惯于捕捉光影之下的情绪暗流，通过清冷、克制的镜头语言重塑真实。
+        </p>
+        <div style="margin-top: 60px;">
+            <a href="mailto:soulboyjade@qq.com" style="color: white; text-decoration: none; border-bottom: 1px solid #666; padding-bottom: 5px; font-size: 0.9rem;">GET IN TOUCH</a>
+        </div>
+    </section>
+
+    <footer>
+        <div>© 2026 LIANG CHUJUN</div>
+        <div>INSTAGRAM / BEHANCE / XIAOHONGSHU</div>
+    </footer>
+
+</body>
+</html>
